@@ -117,17 +117,14 @@ const errorPost = () => {
     })
 }
 
-// register a bridger handler name "testHandler"
+// register a bridger handler name "myListener"
 const registerBridge = () => {
-  $bridge
-    .callHandler('testHandler')
-    .then(() => {
-      displayJson.value = 'Bridge handler registered'
-    })
-    .catch(() => {
-      displayJson.value =
-        'Bridge handler not found or being called outside the native app'
-    })
+  $bridge.registerHandler('myListener', (data, callback) => {
+    console.log('data from native:', data)
+    const responseData = { 'Javascript Says': 'Right back atcha!' }
+    console.log('JS responding to native with', responseData)
+    callback(responseData)
+  })
 }
 
 // call bridge handler name "getProfile"
