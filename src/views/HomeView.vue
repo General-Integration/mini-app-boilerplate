@@ -227,6 +227,10 @@ body {
       right: 16px;
       font-size: 12px;
       color: #af956d;
+
+      @media (max-width: 540px) {
+        position: relative;
+      }
     }
   }
 }
