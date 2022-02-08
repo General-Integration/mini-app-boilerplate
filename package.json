@@ -1,0 +1,39 @@
+{
+  "name": "boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --skip-plugins @vue/cli-plugin-eslint",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
+    "format": "prettier .  --write"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "pinia": "^2.0.11",
+    "vue": "^3.0.0",
+    "vue-bridge-gateway": "^1.0.0-rc.1",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-import": "^1.13.3",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.14.0",
+    "eslint": "^7.31.0",
+    "prettier": "^2.2.1",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^10",
+    "sass": "^1.49.7"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
