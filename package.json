@@ -27,9 +27,9 @@
     "eslint-plugin-vue": "^7.14.0",
     "eslint": "^7.31.0",
     "prettier": "^2.2.1",
-    "node-sass": "^6.0.1",
-    "sass-loader": "^10",
-    "sass": "^1.49.7"
+    "node-sass": "^7.0.1",
+    "sass": "^1.51.0",
+    "sass-loader": "^10"
   },
   "browserslist": [
     "> 1%",
