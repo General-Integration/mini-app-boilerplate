@@ -13,9 +13,6 @@
         <li>
           <div class="submenu">Example Actions</div>
           <ul class="sub">
-            <li @click="getUsers()">GET Users</li>
-            <li @click="postUser()">POST Users</li>
-            <li @click="errorPost()">POST Error</li>
             <li @click="registerBridge()">Register Bridge</li>
             <li @click="callBridge()">Call Bridge</li>
           </ul>
@@ -57,65 +54,11 @@
 
 <script setup>
 import { onMounted, ref, inject } from 'vue'
-import { useUserStore } from '../store/user'
 
 const displayJson = ref()
 
-const $fetch = inject('$fetch')
 const $bridge = inject('$bridge')
-const store = useUserStore()
-
-// here we call $fetch from Pinia action name 'fetchUsers' and show result in displayJson
-// if you use Vuex, you can find example in the readme file at https://www.npmjs.com/package/vue-bridge-gateway
-const getUsers = () => {
-  displayJson.value = 'Loading...'
-  store.fetchUsers().then(() => {
-    displayJson.value = store.users
-  })
-}
-
-// here we use $fetch directly which we've injected and post user to the server
-// change to invalid URL to see error handling
-const postUser = () => {
-  displayJson.value = 'Loading...'
-  $fetch
-    .post('https://jsonplaceholder.typicode.com/posts', {
-      // set custom headers
-      headers: {
-        'Content-Type': 'application/json',
-      },
-
-      // payload
-      data: {
-        title: 'foo',
-        body: 'bar',
-        userId: 1,
-      },
-    })
-    .then((res) => {
-      displayJson.value = res.data
-    })
-    .catch((error) => {
-      displayJson.value = { error }
-    })
-}
-
-// here we use $fetch directly which we've injected and post user to the server
-// change to invalid URL to see error handling
-const errorPost = () => {
-  displayJson.value = 'Loading...'
-  $fetch
-    .post('https://jsonplaceholder.typicode.com/wrong-path', {
-      data: {
-        title: 'foo',
-        body: 'bar',
-        userId: 1,
-      },
-    })
-    .catch((error) => {
-      displayJson.value = { error }
-    })
-}
+// const store = useUserStore()
 
 // register a bridger handler name "myListener"
 const registerBridge = () => {
