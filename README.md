@@ -1,6 +1,6 @@
 ## Mini App Boilerplate
 
-Project structure for mini app with sample `$fetch` and `$bridge` methods
+Project structure for mini app with sample `$bridge` methods
 
 ### Important Notes
 
